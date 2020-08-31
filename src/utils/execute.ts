@@ -1,6 +1,6 @@
 const cp = require('child_process');
 
-const execute = async (command) => {
+const execute = async (command: string): Promise<void> => {
   return new Promise((resolve, reject) => {
     const executedCommand = cp.spawn(command, {
       stdio: 'inherit',
@@ -8,7 +8,7 @@ const execute = async (command) => {
     });
 
     executedCommand.on('error', reject);
-    executedCommand.on('exit', (code) => {
+    executedCommand.on('exit', (code: number): void => {
       if (code === 0) {
         resolve();
       } else {
