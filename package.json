@@ -1,0 +1,17 @@
+{
+  "name": "bundler",
+  "version": "1.0.0",
+  "description": "Bundles and minifies all the files in the project.",
+  "main": "./src/index.js",
+  "repository": "https://github.com/tirette/bundler.git",
+  "author": "Luïs De Zutter <luzedz@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "tirette-bundler": "./src/index.js"
+  },
+  "dependencies": {
+    "configstore": "^5.0.1",
+    "minimist": "^1.2.5"
+  }
+}
