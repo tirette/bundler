@@ -1,6 +1,6 @@
-const Configstore = require('configstore');
-const parseArgv = require('minimist');
-const pkg = require('../../package.json');
+import Configstore from 'configstore';
+import parseArgv from 'minimist';
+import pkg from '../../package.json';
 
 const conf = new Configstore(pkg.name);
 const isBundler = process.argv[1].indexOf(Object.keys(pkg.bin)[0]) >= 0;
@@ -17,7 +17,5 @@ if (isBundler) {
   });
 }
 
-module.exports = {
-  entry: conf.get('entry'),
-  flag: conf.get('flag')
-}
+export const entry: string = conf.get('entry');
+export const flag: 'production' | 'development' = conf.get('flag');

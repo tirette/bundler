@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-export {};
-const { execute } = require('./utils/execute');
-const { flag } = require('./utils/arguments');
+import execute from './utils/execute';
+import { flag } from './utils/arguments';
 
 const run = () => {
   execute(`echo ${flag}`);

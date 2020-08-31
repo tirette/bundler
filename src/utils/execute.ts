@@ -1,4 +1,4 @@
-const cp = require('child_process');
+import cp from 'child_process';
 
 const execute = async (command: string): Promise<void> => {
   return new Promise((resolve, reject) => {
@@ -18,6 +18,4 @@ const execute = async (command: string): Promise<void> => {
   })
 }
 
-module.exports = {
-  execute
-}
+export default execute;
