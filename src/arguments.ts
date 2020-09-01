@@ -1,6 +1,6 @@
 import Configstore from 'configstore';
 import parseArgv from 'minimist';
-import pkg from '../../package.json';
+import pkg from '../package.json';
 
 const conf = new Configstore(pkg.name);
 const isBundler = process.argv[1].indexOf(Object.keys(pkg.bin)[0]) >= 0;

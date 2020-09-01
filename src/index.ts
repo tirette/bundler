@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 import execute from './utils/execute';
-import { flag } from './utils/arguments';
+import scripts from './scripts';
+import { flag } from './arguments';
 
-const run = () => {
-  execute(`echo ${flag}`);
-}
+const driver = 'webpack';
 
-run();
+execute(scripts[driver][flag]);
