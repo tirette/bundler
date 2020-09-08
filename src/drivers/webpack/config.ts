@@ -2,6 +2,7 @@ import { entry, flag } from '../../arguments';
 import { local, } from '../../utils/files';
 import { dirname } from 'path';
 import { Configuration } from 'webpack';
+import fs from 'fs';
 import merge from 'webpack-merge';
 import getFiles from './utils/getFiles';
 import getExtensions from './utils/getExtensions';
@@ -11,6 +12,7 @@ import handleJavascript from './config/handleJavascript';
 import handleCSS from './config/handleCSS';
 import handleHTML from './config/handleHTML';
 import handleImages from './config/handleImages';
+import handleEnvironment from './config/handleEnvironment';
 
 const entryDirectory = dirname(local(entry));
 const files = getFiles(entryDirectory);
@@ -44,6 +46,11 @@ for (const { regex, handler } of handlers) {
     configs.push(handler.common);
     configs.push(handler[flag]);
   }
+}
+
+if (fs.existsSync(local('.env'))) {
+  configs.push(handleEnvironment.common);
+  configs.push(handleEnvironment[flag]);
 }
 
 export default merge(merge(base.common, base[flag]), ...configs);
