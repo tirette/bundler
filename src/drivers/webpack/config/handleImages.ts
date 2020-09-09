@@ -1,5 +1,10 @@
 const common = {};
 
+/*
+* Production:
+* Load all .jpg files as progressive jpegs so they appear to load faster.
+*/
+
 const production = {
   module: {
     rules: [
@@ -20,6 +25,11 @@ const production = {
     ]
   }
 };
+
+/*
+* Development:
+* Load all images.
+*/
 
 const development = {
   module: {

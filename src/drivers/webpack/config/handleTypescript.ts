@@ -1,6 +1,11 @@
 import merge from 'webpack-merge';
 import handleJavascript from './handleJavascript';
 
+/*
+* Common:
+* Transpile TypeScript to JavaScript.
+*/
+
 const common = {
   module: {
     rules: [

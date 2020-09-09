@@ -2,6 +2,12 @@ import { flag, entry } from '../../../arguments';
 import { local } from '../../../utils/files';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
+/*
+* Common:
+* Resolves certain file extensions and modules to improve the readability of imports.
+* Clear the dist folder before re-populating it with the new bundle.
+*/
+
 const common = {
   mode: flag,
   entry: local(entry),
@@ -17,15 +23,20 @@ const common = {
   plugins: [new CleanWebpackPlugin()]
 };
 
-const production = {
-  devtool: 'source-map' as 'source-map',
-  node: {
-    fs: 'empty' as 'empty'
-  },
-}
+const production = {};
+
+/*
+* Development:
+* Set up devtools to show original source files with lines only.
+* This has a slow initial build time but faster rebuild time.
+* Set up dev server with hot reloading.
+* historyApiFallback serves index.html instead of the default 404 responses.
+* When an URL doesn't match a true file, it serves index.html and internal JavaScript based routing can take over.
+* Overlay shows compiler errors or warnings as a full-screen overlay in the browser.
+*/
 
 const development = {
-  devtool: 'inline-source-map' as 'inline-source-map',
+  devtool: 'eval-cheap-module-source-map' as 'eval-cheap-module-source-map',
   devServer: {
     historyApiFallback: true,
     contentBase: local('dist'),

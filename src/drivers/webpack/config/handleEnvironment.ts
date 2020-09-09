@@ -29,6 +29,12 @@ const parseEnvironment = () => {
 
 const common = {};
 
+/*
+* Production:
+* Define an environment variable for every existing environment variable at build time.
+* The production build has no access to process.env to not accidentally expose secrets.
+*/
+
 const production = {
   plugins: [
     new DefinePlugin({
@@ -36,6 +42,12 @@ const production = {
     })
   ]
 };
+
+/*
+* Development:
+* Provide access to process.env.
+* Proxy the api running on a different port to /api.
+*/
 
 const development = {
   devServer: {

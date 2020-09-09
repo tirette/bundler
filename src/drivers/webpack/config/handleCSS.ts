@@ -14,6 +14,11 @@ const common = {
   },
 }
 
+/*
+* Production:
+* Greatly reduce the file size by g-zipping.
+*/
+
 const production = {
   plugins: [
     new CompressionPlugin({

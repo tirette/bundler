@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
+/*
+* List all files in a directory recursively.
+*/
+
 const getFiles = (directory: string): string[] => {
   let fileList: string[] = [];
   const files = fs.readdirSync(directory);
