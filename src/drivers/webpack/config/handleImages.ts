@@ -1,8 +1,11 @@
+import { module } from '../../../utils/files';
+
 const common = {};
 
 /*
 * Production:
 * Load all .jpg files as progressive jpegs so they appear to load faster.
+* File-loader loads files as esModules by default, causing image src to be loaded as Modules.
 */
 
 const production = {
@@ -11,11 +14,17 @@ const production = {
       {
         test: /\.(png|svg|jpg|gif|pdf)$/,
         use: [
-          'file-loader',
           {
-            loader: 'image-webpack-loader',
+            loader: module('file-loader'),
+            options: {
+              esModule: false,
+            }
+          },
+          {
+            loader: module('image-webpack-loader'),
             options: {
               mozjpeg: {
+                esModule: false,
                 progressive: true,
               }
             }
@@ -29,6 +38,7 @@ const production = {
 /*
 * Development:
 * Load all images.
+* File-loader loads files as esModules by default, causing image src to be loaded as Modules.
 */
 
 const development = {
@@ -36,7 +46,14 @@ const development = {
     rules: [
       {
         test: /\.(png|svg|jpg|gif|pdf)$/,
-        use: 'file-loader',
+        use: [
+          {
+            loader: module('file-loader'),
+            options: {
+              esModule: false,
+            }
+          }
+        ]
       }
     ]
   }

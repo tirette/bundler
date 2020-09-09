@@ -1,5 +1,7 @@
 import TerserPlugin from 'terser-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
+import babelrc from './babelrc';
+import { module } from '../../../utils/files';
 
 /*
 * Common:
@@ -14,31 +16,14 @@ const common = {
       {
         enforce: 'pre' as 'pre',
         test: /\.js$/,
-        loader: 'source-map-loader'
+        loader: module('source-map-loader')
       },
       {
         test: /\.js(x?)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/env',
-              '@babel/react',
-              '@babel/typescript'
-            ],
-            plugins: [
-              'babel-plugin-styled-components',
-              '@babel/plugin-transform-runtime'
-            ],
-            env: {
-              test: {
-                plugins: [
-                  'require-context-hook'
-                ]
-              }
-            }
-          }
+          loader: module('babel-loader'),
+          options: babelrc
         },
       }
     ]

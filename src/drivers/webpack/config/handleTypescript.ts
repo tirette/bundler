@@ -1,5 +1,6 @@
 import merge from 'webpack-merge';
 import handleJavascript from './handleJavascript';
+import { module } from '../../../utils/files';
 
 /*
 * Common:
@@ -14,7 +15,7 @@ const common = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'ts-loader'
+            loader: module('ts-loader')
           }
         ]
       },

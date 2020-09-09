@@ -1,4 +1,5 @@
 import CompressionPlugin from 'compression-webpack-plugin';
+import { module } from '../../../utils/files';
 
 const common = {
   module: {
@@ -6,8 +7,8 @@ const common = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader',
+          module('style-loader'),
+          module('css-loader'),
         ],
       },
     ],

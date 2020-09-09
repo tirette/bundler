@@ -36,10 +36,10 @@ const production = {};
 */
 
 const development = {
-  devtool: 'eval-cheap-module-source-map' as 'eval-cheap-module-source-map',
+  devtool: 'cheap-module-eval-source-map' as 'cheap-module-eval-source-map',
   devServer: {
     historyApiFallback: true,
-    contentBase: local('dist'),
+    contentBase: 'dist',
     overlay: true,
     hot: true,
     port: 3000,
