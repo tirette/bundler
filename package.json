@@ -10,8 +10,12 @@
   "bin": {
     "tirette-bundler": "./dist/src/index.js"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": ["./dist"],
   "scripts": {
-    "build": "rm -rf ./dist && tsc && npm install -g"
+    "build": "tsc"
   },
   "dependencies": {
     "@babel/core": "^7.11.6",
