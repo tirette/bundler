@@ -1,9 +1,9 @@
 {
-  "name": "bundler",
+  "name": "@tirette/bundler",
   "version": "1.0.0",
   "description": "Bundles and minifies all the files in the project.",
   "main": "./src/index.js",
-  "repository": "https://github.com/tirette/bundler.git",
+  "repository": "git://github.com/tirette/bundler.git",
   "author": "Luïs De Zutter <luzedz@gmail.com>",
   "license": "MIT",
   "private": false,
@@ -11,7 +11,7 @@
     "tirette-bundler": "./dist/src/index.js"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com"
   },
   "files": ["./dist"],
   "scripts": {
