@@ -1,5 +1,9 @@
 import cp from 'child_process';
 
+/*
+* Execute a given command.
+*/
+
 const execute = async (command: string): Promise<void> => {
   return new Promise((resolve, reject) => {
     const executedCommand = cp.spawn(command, {

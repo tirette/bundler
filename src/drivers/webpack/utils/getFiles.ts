@@ -1,15 +1,20 @@
-import fs from 'fs/promises';
+import fs from 'fs';
 import path from 'path';
 
-const getFiles = async (directory: string): Promise<string[]> => {
+/*
+* List all files in a directory recursively.
+*/
+
+const getFiles = (directory: string): string[] => {
   let fileList: string[] = [];
-  const files = await fs.readdir(directory);
+  const files = fs.readdirSync(directory);
 
   for (const file of files) {
     const p = path.join(directory, file);
+    const stat = fs.lstatSync(p);
 
-    if ((await fs.stat(p)).isDirectory()) {
-      fileList = [...fileList, ...(await getFiles(p))];
+    if (stat.isDirectory()) {
+      fileList = [...fileList, ...getFiles(p)];
     } else {
       fileList.push(p);
     }
