@@ -13,7 +13,7 @@ jobs:
         registry-url: https://npm.pkg.github.com
         scope: '@tirette'
     - run: |
-        yarn --frozen-lockfile
+        yarn --production --frozen-lockfile
         yarn build
         yarn publish
       env:
