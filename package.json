@@ -1,6 +1,6 @@
 {
   "name": "@tirette/bundler",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Bundles and minifies all the files in the project.",
   "main": "./src/index.js",
   "repository": "git://github.com/tirette/bundler.git",
