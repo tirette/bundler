@@ -1,4 +1,3 @@
-import { entry, flag } from '../../arguments';
 import { local, } from '../../utils/files';
 import { dirname } from 'path';
 import { Configuration } from 'webpack';
@@ -13,6 +12,7 @@ import handleCSS from './config/handleCSS';
 import handleHTML from './config/handleHTML';
 import handleImages from './config/handleImages';
 import handleEnvironment from './config/handleEnvironment';
+import { entry, environment } from '../../utils/arguments';
 
 const entryDirectory = dirname(local(entry));
 const files = getFiles(entryDirectory);
@@ -44,13 +44,13 @@ const handlers = [
 for (const { regex, handler } of handlers) {
   if (extensions.some((ext) => regex.test(ext))) {
     configs.push(handler.common);
-    configs.push(handler[flag]);
+    configs.push(handler[environment]);
   }
 }
 
 if (fs.existsSync(local('.env'))) {
   configs.push(handleEnvironment.common);
-  configs.push(handleEnvironment[flag]);
+  configs.push(handleEnvironment[environment]);
 }
 
-export default merge(merge(base.common, base[flag]), ...configs);
+export default merge(merge(base.common, base[environment]), ...configs);

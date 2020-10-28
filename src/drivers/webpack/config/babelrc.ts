@@ -1,8 +1,8 @@
 import { dirname } from 'path';
-import { entry } from '../../../arguments';
 import { local } from '../../../utils/files';
 import getFiles from '../utils/getFiles';
 import getExtensions from '../utils/getExtensions';
+import { entry } from '../../../utils/arguments';
 
 /*
 * Generates .babelrc based on the files in the project.

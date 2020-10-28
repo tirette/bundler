@@ -1,6 +1,6 @@
-import { flag, entry } from '../../../arguments';
 import { local } from '../../../utils/files';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import { environment, entry } from '../../../utils/arguments';
 
 /*
 * Common:
@@ -9,7 +9,7 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 */
 
 const common = {
-  mode: flag,
+  mode: environment,
   entry: local(entry),
   output: {
     filename: '[name].js',

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import execute from './utils/execute';
 import scripts from './scripts';
-import { flag } from './arguments';
+import { execute } from '@tirette/cli-core';
+import { environment } from './utils/arguments';
 
 const driver = 'webpack';
 
-execute(scripts[driver][flag]);
+execute(scripts[driver][environment]);
