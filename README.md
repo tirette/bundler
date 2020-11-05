@@ -18,5 +18,5 @@ To keep Tirette's code bases as future proof as possible we reduce mentions of t
 
 ## Usage
 
-* `tirette-bundler entry.js --production` - Bundle with a production configuration.
-* `tirette-bundler entry.js --development` - Bundle with a development configuration and start a development server with hot reloading.
+* `npm run bundle entry.js --production` - Bundle with a production configuration.
+* `npm run bundle entry.js --development` - Bundle with a development configuration and start a development server with hot reloading.

@@ -1,5 +1,5 @@
 import CompressionPlugin from 'compression-webpack-plugin';
-import { module } from '../../../utils/files';
+import { module } from '@tirette/utilities/lib-cjs';
 
 const common = {
   module: {

@@ -1,6 +1,6 @@
-import { local } from '../../../utils/files';
+import { local } from '@tirette/utilities/lib-cjs';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-import { environment, entry } from '../../../utils/arguments';
+import { environment, entry } from '../../../arguments';
 
 /*
 * Common:

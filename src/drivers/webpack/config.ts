@@ -1,4 +1,4 @@
-import { local, } from '../../utils/files';
+import { local, } from '@tirette/utilities/lib-cjs';
 import { dirname } from 'path';
 import { Configuration } from 'webpack';
 import fs from 'fs';
@@ -12,7 +12,7 @@ import handleCSS from './config/handleCSS';
 import handleHTML from './config/handleHTML';
 import handleImages from './config/handleImages';
 import handleEnvironment from './config/handleEnvironment';
-import { entry, environment } from '../../utils/arguments';
+import { entry, environment } from '../../arguments';
 
 const entryDirectory = dirname(local(entry));
 const files = getFiles(entryDirectory);
@@ -49,6 +49,7 @@ for (const { regex, handler } of handlers) {
 }
 
 if (fs.existsSync(local('.env'))) {
+  console.log('I did get in here, why though?')
   configs.push(handleEnvironment.common);
   configs.push(handleEnvironment[environment]);
 }

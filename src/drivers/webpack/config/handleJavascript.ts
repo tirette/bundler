@@ -1,7 +1,7 @@
 import TerserPlugin from 'terser-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
 import babelrc from './babelrc';
-import { module } from '../../../utils/files';
+import { module } from '@tirette/utilities/lib-cjs';
 
 /*
 * Common:

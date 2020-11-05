@@ -2,12 +2,16 @@ import fs from 'fs';
 import dotenv from 'dotenv';
 import Dotenv from 'dotenv-webpack';
 import { DefinePlugin } from 'webpack';
-import { local } from '../../../utils/files';
+import { local } from '@tirette/utilities/lib-cjs';
 
-dotenv.config();
+if (fs.existsSync(local('.env'))) {
+  dotenv.config();
+}
 
 const getKeysFromEnv = (): string[] => {
-  const env = fs.readFileSync(local('.env'), 'utf-8');
+  const env = fs.existsSync(local('.env'))
+    ? fs.readFileSync(local('.env'), 'utf-8')
+    : ''
   
   return env.split(/[\n=]/).filter((key, index) => {
     if (!(index % 2)) {

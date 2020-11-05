@@ -1,4 +1,4 @@
-import { module } from '../../../utils/files';
+import { module } from '@tirette/utilities/lib-cjs';
 
 const common = {};
 

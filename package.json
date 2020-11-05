@@ -1,23 +1,24 @@
 {
   "name": "@tirette/bundler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Bundles and minifies all the files in the project.",
-  "main": "./src/index.ts",
+  "main": "./lib-cjs/index.js",
   "repository": "git://github.com/tirette/bundler.git",
   "author": "Luïs De Zutter <luzedz@gmail.com>",
   "license": "MIT",
   "private": false,
   "bin": {
-    "tirette-bundler": "./dist/index.js"
+    "bundle": "./lib-cjs/index.js"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "files": [
-    "./dist"
+    "./lib-cjs",
+    "./lib-esm"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc && tsc -m es6 --outDir lib-esm"
   },
   "peerDependencies": {
     "styled-components": ">= 2"
@@ -25,7 +26,6 @@
   "devDependencies": {
     "@types/compression-webpack-plugin": "^4.0.1",
     "@types/dotenv-webpack": "^1.8.0",
-    "@types/node": "^14.6.2",
     "@types/terser-webpack-plugin": "^4.1.0",
     "@types/webpack": "^4.41.21",
     "@types/webpack-dev-server": "^3.11.0",
@@ -37,7 +37,8 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@tirette/cli-core": "^1.0.0",
+    "@tirette/cli-core": "^1.0.1",
+    "@tirette/utilities": "^1.0.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-plugin-styled-components": "^1.11.1",

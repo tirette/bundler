@@ -1,8 +1,8 @@
 import { dirname } from 'path';
-import { local } from '../../../utils/files';
+import { local } from '@tirette/utilities/lib-cjs';
 import getFiles from '../utils/getFiles';
 import getExtensions from '../utils/getExtensions';
-import { entry } from '../../../utils/arguments';
+import { entry } from '../../../arguments';
 
 /*
 * Generates .babelrc based on the files in the project.

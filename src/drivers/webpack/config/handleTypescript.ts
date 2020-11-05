@@ -1,6 +1,6 @@
 import merge from 'webpack-merge';
 import handleJavascript from './handleJavascript';
-import { module } from '../../../utils/files';
+import { module } from '@tirette/utilities/lib-cjs';
 
 /*
 * Common:

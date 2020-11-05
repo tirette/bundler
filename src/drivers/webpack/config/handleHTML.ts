@@ -1,6 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CompressionPlugin from 'compression-webpack-plugin';
-import { local } from '../../../utils/files';
+import { local } from '@tirette/utilities/lib-cjs';
 
 /*
 * Common:
