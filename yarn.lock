@@ -976,10 +976,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@tirette/cli-core@^1.0.1":
-  version "1.0.1"
-  resolved "https://npm.pkg.github.com/download/@tirette/cli-core/1.0.1/d22814606bb1b1d4a6e11f42e43ffe02be11ec8cd6220a722a8b19141fae2e0e#9eac0d165d3ace04f225d74f5d921bd87296e100"
-  integrity sha512-kre9vVSZEUWtdB/l7p/vW0VbcYYV187L8PCqmrVCn9Dq2LV3zbJdxS4oioQq6ndzO8dIpRbg9VDbx9uCYmKaug==
+"@tirette/cli-core@^1.0.2":
+  version "1.0.2"
+  resolved "https://npm.pkg.github.com/download/@tirette/cli-core/1.0.2/5e0914b8348270018121d899d44cecdf60b6001a291ed2bf527606091371c037#32211079e76d2eae505f6edd7a3a3468b100413c"
+  integrity sha512-xQiJvbrRb0BbjzSZMiwV7T0Io7fSqgGDbPhwh7OebJCiNhZB/XAPBJb64wsNt2hjSoIpersgvE/0X8lFC3v3IQ==
   dependencies:
     minimist "^1.2.5"
 

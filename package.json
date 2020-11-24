@@ -1,6 +1,6 @@
 {
   "name": "@tirette/bundler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Bundles and minifies all the files in the project.",
   "main": "./lib-cjs/index.js",
   "repository": "git://github.com/tirette/bundler.git",
@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@tirette/cli-core": "^1.0.1",
+    "@tirette/cli-core": "^1.0.2",
     "@tirette/utilities": "^1.0.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-require-context-hook": "^1.0.0",
