@@ -1,6 +1,6 @@
 {
   "name": "@tirette/bundler",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Bundles and minifies all the files in the project.",
   "main": "./lib-cjs/index.js",
   "repository": "git://github.com/tirette/bundler.git",
@@ -48,6 +48,7 @@
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^2.0.0",
     "file-loader": "^6.1.0",
+    "graphql-tag": "^2.11.0",
     "html-webpack-plugin": "^4.4.1",
     "image-webpack-loader": "^6.0.0",
     "source-map-loader": "^1.1.0",

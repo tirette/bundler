@@ -12,6 +12,7 @@ import handleCSS from './config/handleCSS';
 import handleHTML from './config/handleHTML';
 import handleImages from './config/handleImages';
 import handleEnvironment from './config/handleEnvironment';
+import handleGraphql from './config/handleGraphql';
 import { entry, environment } from '../../arguments';
 
 const entryDirectory = dirname(local(entry));
@@ -38,6 +39,10 @@ const handlers = [
   {
     regex: /(png|svg|jpg|gif|pdf)$/,
     handler: handleImages,
+  },
+  {
+    regex: /(graphql|gql)$/,
+    handler: handleGraphql,
   }
 ];
 
@@ -49,7 +54,6 @@ for (const { regex, handler } of handlers) {
 }
 
 if (fs.existsSync(local('.env'))) {
-  console.log('I did get in here, why though?')
   configs.push(handleEnvironment.common);
   configs.push(handleEnvironment[environment]);
 }
